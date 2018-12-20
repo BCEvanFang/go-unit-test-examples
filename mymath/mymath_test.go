@@ -3,6 +3,8 @@ package mymath_test
 import (
 	"demounit/mymath"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 // 3A principle
@@ -18,7 +20,5 @@ func TestOnePlusTwoEqualsThree(t *testing.T) {
 	actual = mymath.Add(num1, num2)
 
 	// Assert
-	if expect != actual {
-		t.Error("1 + 2 should be 3")
-	}
+	assert.Equal(t, expect, actual)
 }
