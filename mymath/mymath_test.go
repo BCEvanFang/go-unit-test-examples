@@ -32,4 +32,17 @@ func TestMyMathModules(t *testing.T) {
 		actual := mymath.Multiply(3, 4)
 		assert.Equal(t, expect, actual)
 	})
+
+	t.Run("10 / 5 should be 2", func(t *testing.T) {
+		var expect float32 = 2.0
+		actual, _ := mymath.Devide(10, 5)
+		assert.Equal(t, expect, actual)
+	})
+
+	t.Run("2 / 0 occurs error", func(t *testing.T) {
+		_, err := mymath.Devide(2, 0)
+
+		// Test error
+		assert.Error(t, err)
+	})
 }
